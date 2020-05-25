@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.AccessControl;
@@ -18,6 +18,7 @@ namespace Snake
 		int[] TailX = new int[100];
 		int[] TailY = new int[100];
 
+		 
 		const byte height = 30;
 		const byte width = 60;
 
@@ -343,23 +344,23 @@ namespace Snake
 					if (i == 0 || i == height - 1)
 					{
 						Console.ForegroundColor = ConsoleColor.White;
-						Console.Write("-");
+						Console.Write((char)45);
 					}
 					else if (j == 0 || j == width - 1)
 					{
 						Console.ForegroundColor = ConsoleColor.White;
-						Console.Write("|");
+						Console.Write((char)124);
 
 					}
 					else if (j == fruitX && i == fruitY)
 					{
 						Console.ForegroundColor = ConsoleColor.DarkGreen;
-						Console.Write("F");
+						Console.Write((char)70);
 					}
 					else if (j == headX && i == headY)
 					{
 						Console.ForegroundColor = ConsoleColor.DarkYellow;
-						Console.Write("0");
+						Console.Write((char)48);
 					}
 					else
 					{
@@ -369,13 +370,13 @@ namespace Snake
 							if (TailX[k] == j && TailY[k] == i)
 							{
 								Console.ForegroundColor = ConsoleColor.DarkMagenta;
-								Console.Write("o");
+								Console.Write((char)111);
 								isprinted = true;
 							}
 						}
 						if (!isprinted)
 						{
-							Console.Write(" ");
+							Console.Write((char)32);
 						}
 					}
 
